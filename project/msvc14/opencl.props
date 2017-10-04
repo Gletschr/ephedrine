@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OpenCL-include>$(AMDAPPSDKROOT)include</OpenCL-include>
+    <OpenCL-x86-lib>$(AMDAPPSDKROOT)lib\x86</OpenCL-x86-lib>
+    <OpenCL-x64-lib>$(AMDAPPSDKROOT)lib\x86_64</OpenCL-x64-lib>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="OpenCL-include">
+      <Value>$(OpenCL-include)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenCL-x86-lib">
+      <Value>$(OpenCL-x86-lib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenCL-x64-lib">
+      <Value>$(OpenCL-x64-lib)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

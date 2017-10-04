@@ -202,10 +202,10 @@ namespace Internal {
 	//-------------------------------------------------------------------------
 	
 	bool Context::runProgram(
-		Program program, size_t range, size_t argc, cl_mem *argv) {
+		Program program, size_t range, cl_uint argc, cl_mem *argv) {
 		cl_kernel kernel = kernels[program];
 		cl_int result;
-		for(size_t i = 0; i < argc; ++ i) {
+		for(cl_uint i = 0; i < argc; ++ i) {
 			result = clSetKernelArg(
 				kernel, i, sizeof(cl_mem), (void *)&argv[i]);
 			if(result != CL_SUCCESS) {

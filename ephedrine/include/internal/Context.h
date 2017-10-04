@@ -119,7 +119,7 @@ namespace Internal {
 			//-----------------------------------------------------------------
 			
 			bool runProgram(
-				Program program, size_t range, size_t argc, cl_mem *argv);
+				Program program, size_t range, cl_uint argc, cl_mem *argv);
 			
 			//-----------------------------------------------------------------
 			//

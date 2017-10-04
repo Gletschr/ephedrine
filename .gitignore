@@ -1,3 +1,14 @@
+# Build/Temp dirs
+project/msvc14/bin/
+project/msvc14/build/
+project/msvc14/lib/
+project/msvc14/.vs/
+
+# Visual Studio files
+*.db
+*.filters
+*.user
+
 # Prerequisites
 *.d
 

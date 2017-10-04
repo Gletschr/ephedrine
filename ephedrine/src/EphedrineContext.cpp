@@ -82,7 +82,7 @@ namespace Ephedrine {
 			Internal::Log::error("undefined device %i.", device);
 			return nullptr;
 		}
-		size_t c = 0;
+		cl_uint c = 0;
 		cl_device_id devices[4];
 		result = clGetDeviceIDs(platform, type, 
 			sizeof(devices) / sizeof(devices[0]), devices, &c);
