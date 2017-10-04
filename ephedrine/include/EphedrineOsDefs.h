@@ -41,6 +41,8 @@
 
 #if defined(EPHEDRINE_DLL)
 #	define EPHEDRINE_API __declspec(dllexport)
+#elif defined(EPHEDRINE_BUILTIN)
+#	define EPHEDRINE_API
 #else
 #	define EPHEDRINE_API __declspec(dllimport)
 #endif
