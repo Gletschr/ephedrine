@@ -197,7 +197,7 @@ namespace Ephedrine {
 				i_b->getContext() != context ||
 				i_result->getContext() != context) {
 				Internal::Log::error(
-					"(Math::add) invalid array type/size/context.");
+					"(Math::mul) invalid array type/size/context.");
 				return false;
 			}
 			cl_mem mem[3] = {
@@ -239,7 +239,7 @@ namespace Ephedrine {
 			// 	break;
 			default:
 				Internal::Log::error(
-					"(Math::add) undefined array type %i.", type);
+					"(Math::mul) undefined array type %i.", type);
 				return false;
 			}
 			return context->runProgram(program, size, 3, mem);
@@ -261,7 +261,7 @@ namespace Ephedrine {
 				i_b->getContext() != context ||
 				i_result->getContext() != context) {
 				Internal::Log::error(
-					"(Math::add) invalid array type/size/context.");
+					"(Math::div) invalid array type/size/context.");
 				return false;
 			}
 			cl_mem mem[3] = {
@@ -303,7 +303,7 @@ namespace Ephedrine {
 			// 	break;
 			default:
 				Internal::Log::error(
-					"(Math::add) undefined array type %i.", type);
+					"(Math::div) undefined array type %i.", type);
 				return false;
 			}
 			return context->runProgram(program, size, 3, mem);

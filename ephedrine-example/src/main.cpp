@@ -77,7 +77,7 @@ int main(int argc, const char **argv) {
 	if(	!a->setRawData((const uint8_t *)in, 0, sizeof(in)) ||
 		!b->setRawData((const uint8_t *)in, 0, sizeof(in))) return -1;
 
-	// exec array add operator
+	// exec array mul operator
 	if (!Math::mul(a, b, r)) return -1;
 
 	//
