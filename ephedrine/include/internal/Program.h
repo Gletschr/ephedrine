@@ -53,7 +53,29 @@ namespace Internal {
 	
 	enum Program {
 		
-		EPH_AA_Add_Char		= 0x00,
+		EPH_A_Inc_Char = 0x00,
+		EPH_A_Inc_UChar,
+		EPH_A_Inc_Short,
+		EPH_A_Inc_UShort,
+		EPH_A_Inc_Int,
+		EPH_A_Inc_UInt,
+		EPH_A_Inc_Long,
+		EPH_A_Inc_ULong,
+		EPH_A_Inc_Float,
+		EPH_A_Inc_Double,
+		
+		EPH_A_Dec_Char,
+		EPH_A_Dec_UChar,
+		EPH_A_Dec_Short,
+		EPH_A_Dec_UShort,
+		EPH_A_Dec_Int,
+		EPH_A_Dec_UInt,
+		EPH_A_Dec_Long,
+		EPH_A_Dec_ULong,
+		EPH_A_Dec_Float,
+		EPH_A_Dec_Double,
+		
+		EPH_AA_Add_Char,
 		EPH_AA_Add_UChar,
 		EPH_AA_Add_Short,
 		EPH_AA_Add_UShort,
@@ -96,6 +118,66 @@ namespace Internal {
 		EPH_AA_Div_ULong,
 		EPH_AA_Div_Float,
 		EPH_AA_Div_Double,
+		
+		EPH_A_Cos_Float,
+		EPH_A_Cos_Double,
+		
+		EPH_A_Sin_Float,
+		EPH_A_Sin_Double,
+		
+		EPH_A_Tan_Float,
+		EPH_A_Tan_Double,
+		
+		EPH_A_Acos_Float,
+		EPH_A_Acos_Double,
+		
+		EPH_A_Asin_Float,
+		EPH_A_Asin_Double,
+		
+		EPH_A_Atan_Float,
+		EPH_A_Atan_Double,
+		
+		EPH_A_Cbrt_Float,
+		EPH_A_Cbrt_Double,
+		
+		EPH_A_Ceil_Float,
+		EPH_A_Ceil_Double,
+		
+		EPH_A_Erf_Float,
+		EPH_A_Erf_Double,
+		
+		EPH_A_Erfc_Float,
+		EPH_A_Erfc_Double,
+		
+		EPH_A_Exp_Float,
+		EPH_A_Exp_Double,
+		
+		EPH_A_Exp2_Float,
+		EPH_A_Exp2_Double,
+		
+		EPH_A_Exp10_Float,
+		EPH_A_Exp10_Double,
+		
+		EPH_A_Fabs_Float,
+		EPH_A_Fabs_Double,
+		
+		EPH_A_Floor_Float,
+		EPH_A_Floor_Double,
+		
+		EPH_A_Log_Float,
+		EPH_A_Log_Double,
+		
+		EPH_A_Log2_Float,
+		EPH_A_Log2_Double,
+		
+		EPH_A_Log10_Float,
+		EPH_A_Log10_Double,
+		
+		EPH_A_Trunc_Float,
+		EPH_A_Trunc_Double,
+		
+		EPH_A_Round_Float,
+		EPH_A_Round_Double,
 		
 	};
 

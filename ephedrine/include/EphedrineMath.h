@@ -69,7 +69,35 @@ namespace Ephedrine {
 		
 		//---------------------------------------------------------------------
 		//
-		// Array/Array addition operator.
+		// Increment operator.
+		// Executed for each array element.
+		//
+		// a 		Argument.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool inc(Array *a);
+		
+		//---------------------------------------------------------------------
+		//
+		// Decrement operator.
+		// Executed for each array element.
+		//
+		// a 		Argument.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool dec(Array *a);
+		
+		//---------------------------------------------------------------------
+		//
+		// Addition operator.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
 		//
 		// a 		First argument.
 		// b 		Second argument.
@@ -83,7 +111,9 @@ namespace Ephedrine {
 		
 		//---------------------------------------------------------------------
 		//
-		// Array/Array substraction operator.
+		// Substraction operator.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
 		//
 		// a 		First argument.
 		// b 		Second argument.
@@ -97,7 +127,9 @@ namespace Ephedrine {
 		
 		//---------------------------------------------------------------------
 		//
-		// Array/Array multiplication operator.
+		// Multiplication operator.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
 		//
 		// a 		First argument.
 		// b 		Second argument.
@@ -111,7 +143,9 @@ namespace Ephedrine {
 		
 		//---------------------------------------------------------------------
 		//
-		// Array/Array division operator.
+		// Division operator.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
 		//
 		// a 		First argument.
 		// b 		Second argument.
@@ -122,6 +156,306 @@ namespace Ephedrine {
 		//---------------------------------------------------------------------
 		
 		EPHEDRINE_API bool div(Array *a, Array *b, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Cosine.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool cos(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Sine.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool sin(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Tangent.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool tan(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Arc cosine.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool acos(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Arc sine.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool asin(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Arc tangent.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool atan(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Cube-root.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool cbrt(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Round to integral value.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool ceil(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Error function encountered in integrating the normal distribution.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool erf(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Complementary error function.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool erfc(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Exponential base 'e'.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool exp(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Exponential base 2.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool exp2(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Exponential base 10.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool exp10(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Absolute value of a floating-point number.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool fabs(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Round to integral value.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool floor(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Natural logarithm.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool log(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Base 2 logarithm.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool log2(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Base 10 logarithm.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool log10(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Round to integral value.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool trunc(Array *a, Array *result);
+		
+		//---------------------------------------------------------------------
+		//
+		// Round to integral value.
+		// Executed for each array element.
+		// Arrays must have the same context, type and size.
+		//
+		// a 		Argument.
+		// result 	Array to store operation result.
+		//
+		// Returns true on evaluated succesfully, false - otherwise.
+		//
+		//---------------------------------------------------------------------
+		
+		EPHEDRINE_API bool round(Array *a, Array *result);
 		
 		//---------------------------------------------------------------------
 		
