@@ -39,6 +39,7 @@
 #include "internal/Log.h"
 #include "internal/Array.h"
 #include "internal/Context.h"
+#include "internal/TypeInfo.h"
 
 //-----------------------------------------------------------------------------
 
@@ -63,6 +64,9 @@ namespace Internal {
 	
 	bool Array::getRawData(
 		uint8_t *buffer, size_t offset, size_t count) {
+		
+		EPHEDRINE_ASSERT(offset + count <= TypeInfo(type).size * size,
+			"Data index out of range.");
 		return context->readMemory(mem, buffer, offset, count);
 	}
 	
@@ -70,6 +74,9 @@ namespace Internal {
 
 	bool Array::setRawData(
 		const uint8_t *buffer, size_t offset, size_t count) {
+		
+		EPHEDRINE_ASSERT(offset + count <= TypeInfo(type).size * size,
+			"Data index out of range.");
 		return context->writeMemory(mem, buffer, offset, count);
 	}
 	

@@ -106,9 +106,9 @@ namespace Ephedrine {
 			case Type::EPH_Float:
 				program = Internal::Program::EPH_AA_Add_Float;
 				break;
-			// case Type::EPH_Double:
-			// 	program = Program::EPH_AA_Add_Double;
-			// 	break;
+			case Type::EPH_Double:
+				program = Internal::Program::EPH_AA_Add_Double;
+				break;
 			default:
 				Internal::Log::error(
 					"(Math::add) undefined array type %i.", type);
@@ -170,9 +170,9 @@ namespace Ephedrine {
 			case Type::EPH_Float:
 				program = Internal::Program::EPH_AA_Sub_Float;
 				break;
-			// case Type::EPH_Double:
-			// 	program = Program::EPH_AA_Sub_Double;
-			// 	break;
+			case Type::EPH_Double:
+				program = Internal::Program::EPH_AA_Sub_Double;
+				break;
 			default:
 				Internal::Log::error(
 					"(Math::sub) undefined array type %i.", type);
@@ -234,9 +234,9 @@ namespace Ephedrine {
 			case Type::EPH_Float:
 				program = Internal::Program::EPH_AA_Mul_Float;
 				break;
-			// case Type::EPH_Double:
-			// 	program = Program::EPH_AA_Mul_Double;
-			// 	break;
+			case Type::EPH_Double:
+				program = Internal::Program::EPH_AA_Mul_Double;
+				break;
 			default:
 				Internal::Log::error(
 					"(Math::mul) undefined array type %i.", type);
@@ -298,9 +298,9 @@ namespace Ephedrine {
 			case Type::EPH_Float:
 				program = Internal::Program::EPH_AA_Div_Float;
 				break;
-			// case Type::EPH_Double:
-			// 	program = Program::EPH_AA_Div_Double;
-			// 	break;
+			case Type::EPH_Double:
+				program = Internal::Program::EPH_AA_Div_Double;
+				break;
 			default:
 				Internal::Log::error(
 					"(Math::div) undefined array type %i.", type);

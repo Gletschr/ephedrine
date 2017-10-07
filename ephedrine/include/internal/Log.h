@@ -67,6 +67,16 @@ namespace Internal {
 			
 			//-----------------------------------------------------------------
 			//
+			// Print success message.
+			//
+			// format 	Message string format.
+			//
+			//-----------------------------------------------------------------
+			
+			static void success(const char *format, ...);
+			
+			//-----------------------------------------------------------------
+			//
 			// Print error message.
 			//
 			// format 	Message string format.

@@ -62,7 +62,7 @@ namespace Internal {
 		EPH_AA_Add_Long,
 		EPH_AA_Add_ULong,
 		EPH_AA_Add_Float,
-		// EPH_AA_Add_Double,
+		EPH_AA_Add_Double,
 
 		EPH_AA_Sub_Char,
 		EPH_AA_Sub_UChar,
@@ -73,7 +73,7 @@ namespace Internal {
 		EPH_AA_Sub_Long,
 		EPH_AA_Sub_ULong,
 		EPH_AA_Sub_Float,
-		// EPH_AA_Sub_Double,
+		EPH_AA_Sub_Double,
 		
 		EPH_AA_Mul_Char,
 		EPH_AA_Mul_UChar,
@@ -84,7 +84,7 @@ namespace Internal {
 		EPH_AA_Mul_Long,
 		EPH_AA_Mul_ULong,
 		EPH_AA_Mul_Float,
-		// EPH_AA_Mul_Double,
+		EPH_AA_Mul_Double,
 		
 		EPH_AA_Div_Char,
 		EPH_AA_Div_UChar,
@@ -95,7 +95,7 @@ namespace Internal {
 		EPH_AA_Div_Long,
 		EPH_AA_Div_ULong,
 		EPH_AA_Div_Float,
-		// EPH_AA_Div_Double,
+		EPH_AA_Div_Double,
 		
 	};
 

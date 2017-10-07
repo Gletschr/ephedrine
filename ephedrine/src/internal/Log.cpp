@@ -49,30 +49,43 @@ namespace Internal {
 	
 	//-------------------------------------------------------------------------
 	
-	#define EPHEDRINE_LOG_PRINTF(type, format) \
-	static char buffer[256]; \
+	#define EPHEDRINE_LOG_PRINTF(color, format) \
+	static char buffer[512]; \
 	va_list va; \
 	va_start(va, format); \
 	vsnprintf(buffer, sizeof(buffer), format, va); \
 	va_end(va); \
-	printf("%s%s\n", "[Ephedrine::" #type "]: ", buffer);
+	printf("%s%s\n", "[Ephedrine]: ", buffer);
+	
+	//-------------------------------------------------------------------------
+	
+	#define EPHEDRINE_LOG_COLOR_RED ""
+	#define EPHEDRINE_LOG_COLOR_GREEN ""
+	#define EPHEDRINE_LOG_COLOR_YELLOW ""
+	#define EPHEDRINE_LOG_COLOR_WHITE ""
 	
 	//-------------------------------------------------------------------------
 	
 	void Log::message(const char *format, ...) {
-		EPHEDRINE_LOG_PRINTF(Message, format);
+		EPHEDRINE_LOG_PRINTF(EPHEDRINE_LOG_COLOR_WHITE, format);
+	}
+	
+	//-------------------------------------------------------------------------
+	
+	void Log::success(const char *format, ...) {
+		EPHEDRINE_LOG_PRINTF(EPHEDRINE_LOG_COLOR_GREEN, format);
 	}
 	
 	//-------------------------------------------------------------------------
 	
 	void Log::error(const char *format, ...) {
-		EPHEDRINE_LOG_PRINTF(Error, format);
+		EPHEDRINE_LOG_PRINTF(EPHEDRINE_LOG_COLOR_RED, format);
 	}
 	
 	//-------------------------------------------------------------------------
 	
 	void Log::warning(const char *format, ...) {
-		EPHEDRINE_LOG_PRINTF(Warning, format);
+		EPHEDRINE_LOG_PRINTF(EPHEDRINE_LOG_COLOR_YELLOW, format);
 	}
 	
 	//-------------------------------------------------------------------------

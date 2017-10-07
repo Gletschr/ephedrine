@@ -58,6 +58,8 @@ namespace Ephedrine {
 	//-------------------------------------------------------------------------
 	
 	class EPHEDRINE_API Array {
+		
+		protected:
 			
 			Type 	type;	// Array data type.
 			size_t 	size;	// Array elements count.	

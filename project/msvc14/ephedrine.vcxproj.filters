@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\ephedrine\src\internal\Array.cpp">
+      <Filter>src\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\internal\Context.cpp">
+      <Filter>src\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\internal\Log.cpp">
+      <Filter>src\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\internal\TypeInfo.cpp">
+      <Filter>src\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\EphedrineMath.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\EphedrineArray.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ephedrine\src\EphedrineContext.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ephedrine\include\internal\Array.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\internal\Context.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\internal\Log.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\internal\Program.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\internal\TypeInfo.h">
+      <Filter>include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineType.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineOsDefs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineMath.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineDevice.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineContext.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\EphedrineArray.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ephedrine\include\Ephedrine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{cb48aa62-b96a-45a2-b872-250797961fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{350f88d1-786f-472c-aefd-429f3c6fbe42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\internal">
+      <UniqueIdentifier>{b8a24389-5503-49b4-be15-f3ffb68a826c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\internal">
+      <UniqueIdentifier>{516b4830-3334-43ed-bfec-e56fd266980e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

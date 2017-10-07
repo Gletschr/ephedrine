@@ -6,8 +6,8 @@ project/msvc14/.vs/
 
 # Visual Studio files
 *.db
-*.filters
 *.user
+*.opendb
 
 # Prerequisites
 *.d

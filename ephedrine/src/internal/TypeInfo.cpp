@@ -86,10 +86,10 @@ namespace Internal {
 			name = "float";
 			size = sizeof(cl_float);
 			break;
-		// case Ephedrine::Type::EPH_Double: 
-		// 	name = "double";
-		// 	size = sizeof(cl_double);
-		// 	break;
+		case Ephedrine::Type::EPH_Double: 
+			name = "double";
+			size = sizeof(cl_double);
+			break;
 		default:
 			name = "undefined";
 			size = 0;

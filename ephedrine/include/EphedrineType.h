@@ -68,7 +68,7 @@ namespace Ephedrine {
 		EPH_Long	= 0x06, // long
 		EPH_ULong	= 0x07, // unsigned long
 		EPH_Float	= 0x08, // float
-		// EPH_Double	= 0x09, // double
+		EPH_Double	= 0x09, // double
 		
 	};
 	

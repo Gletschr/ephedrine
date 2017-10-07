@@ -54,10 +54,10 @@ int main(int argc, const char **argv) {
 	Context *context = Context::create(Device::EPH_GPU_1);
 
 	//
-	if(!context) return -1;
-
-	//
-	printf("[Ephedrine]: context created succesfully.\n");
+	if(!context) {
+		system("pause");
+		return -1;
+	}
 
 	// array size
 	constexpr size_t size = 128;
@@ -68,23 +68,41 @@ int main(int argc, const char **argv) {
 	Array *r = context->createArray(Type::EPH_Float, size);
 
 	//
-	float in[size];
+	float in_a[size];
+	float in_b[size];
 	
 	//
-	for(size_t i = 0; i < size; ++ i) in[i] = 2.f;
+	for(size_t i = 0; i < size; ++ i) {
+		in_a[i] = 3.5f;
+		in_b[i] = 2.f;
+	}
+	
+	//
+	const uint8_t *in_a_raw = (const uint8_t *)in_a;
+	const uint8_t *in_b_raw = (const uint8_t *)in_b;
 
 	// set default values
-	if(	!a->setRawData((const uint8_t *)in, 0, sizeof(in)) ||
-		!b->setRawData((const uint8_t *)in, 0, sizeof(in))) return -1;
+	if(	!a->setRawData(in_a_raw, 0, sizeof(in_a)) ||
+		!b->setRawData(in_b_raw, 0, sizeof(in_b))) {
+		
+		system("pause");
+		return -1;
+	}
 
 	// exec array mul operator
-	if (!Math::mul(a, b, r)) return -1;
+	if(!Math::mul(a, b, r)) {
+		system("pause");
+		return -1;
+	}
 
 	//
 	float out[size];
 
 	//
-	if(!r->getRawData((uint8_t *)out, 0, sizeof(out))) return -1;
+	if(!r->getRawData((uint8_t *)out, 0, sizeof(out))) {
+		system("pause");
+		return -1;
+	}
 
 	//
 	for(size_t i = 0; i < size; ++ i)

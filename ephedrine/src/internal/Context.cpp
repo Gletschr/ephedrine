@@ -82,9 +82,11 @@ namespace Internal {
 	
 	//-------------------------------------------------------------------------
 	
-	#define EPHEDRINE_KERNEL_AA_MATH(n, t, o) \
+	#define EPHEDRINE_KERNEL_AA_MATH(n, t, o, ...) \
 	{ \
 	#n, \
+	#__VA_ARGS__ \
+	"\n" \
 	"__kernel void " #n \
 	"(" \
 	"__global " #t "*a" \
@@ -101,17 +103,17 @@ namespace Internal {
 	
 	//-------------------------------------------------------------------------
 	
-	#define EPHEDRINE_KERNEL_AA_MATH_ADD(n, t) \
-	EPHEDRINE_KERNEL_AA_MATH(n, t, +)
+	#define EPHEDRINE_KERNEL_AA_MATH_ADD(n, t, ...) \
+	EPHEDRINE_KERNEL_AA_MATH(n, t, +, __VA_ARGS__)
 	
-	#define EPHEDRINE_KERNEL_AA_MATH_SUB(n, t) \
-	EPHEDRINE_KERNEL_AA_MATH(n, t, -)
+	#define EPHEDRINE_KERNEL_AA_MATH_SUB(n, t, ...) \
+	EPHEDRINE_KERNEL_AA_MATH(n, t, -, __VA_ARGS__)
 	
-	#define EPHEDRINE_KERNEL_AA_MATH_MUL(n, t) \
-	EPHEDRINE_KERNEL_AA_MATH(n, t, *)
+	#define EPHEDRINE_KERNEL_AA_MATH_MUL(n, t, ...) \
+	EPHEDRINE_KERNEL_AA_MATH(n, t, *, __VA_ARGS__)
 	
-	#define EPHEDRINE_KERNEL_AA_MATH_DIV(n, t) \
-	EPHEDRINE_KERNEL_AA_MATH(n, t, /)
+	#define EPHEDRINE_KERNEL_AA_MATH_DIV(n, t, ...) \
+	EPHEDRINE_KERNEL_AA_MATH(n, t, /, __VA_ARGS__)
 	
 	//-------------------------------------------------------------------------
 	
@@ -128,7 +130,8 @@ namespace Internal {
 			EPHEDRINE_KERNEL_AA_MATH_ADD(EPH_AA_Add_Long, long),
 			EPHEDRINE_KERNEL_AA_MATH_ADD(EPH_AA_Add_ULong, ulong),
 			EPHEDRINE_KERNEL_AA_MATH_ADD(EPH_AA_Add_Float, float),
-			// EPHEDRINE_KERNEL_AA_MATH_ADD(EPH_AA_Add_Double, double),
+			EPHEDRINE_KERNEL_AA_MATH_ADD(EPH_AA_Add_Double, double,
+			(#pragma OPENCL EXTENSION cl_khr_fp64: enable)),
 			
 			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_Char, char),
 			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_UChar, uchar),
@@ -139,7 +142,8 @@ namespace Internal {
 			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_Long, long),
 			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_ULong, ulong),
 			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_Float, float),
-			// EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_Double, double),
+			EPHEDRINE_KERNEL_AA_MATH_SUB(EPH_AA_Sub_Double, double,
+			(#pragma OPENCL EXTENSION cl_khr_fp64: enable)),
 			
 			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_Char, char),
 			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_UChar, uchar),
@@ -150,7 +154,8 @@ namespace Internal {
 			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_Long, long),
 			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_ULong, ulong),
 			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_Float, float),
-			// EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_Double, double),
+			EPHEDRINE_KERNEL_AA_MATH_MUL(EPH_AA_Mul_Double, double,
+			(#pragma OPENCL EXTENSION cl_khr_fp64: enable)),
 			
 			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_Char, char),
 			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_UChar, uchar),
@@ -161,7 +166,8 @@ namespace Internal {
 			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_Long, long),
 			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_ULong, ulong),
 			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_Float, float),
-			// EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_Double, double),
+			EPHEDRINE_KERNEL_AA_MATH_DIV(EPH_AA_Div_Double, double,
+			(#pragma OPENCL EXTENSION cl_khr_fp64: enable)),
 			
 		};
 		
@@ -175,24 +181,32 @@ namespace Internal {
 			cl_program program = clCreateProgramWithSource(
 				context, 1, &sources[i].data, nullptr, &result);
 			if(result != CL_SUCCESS) {
-				Log::error("an error occured while compiling kernels. "
-					"OpenCL error code: %i.", result);
-				return false;
+				Log::error("compiling kernel (%zi/%zi) \"%s\": fail. "
+					"OpenCL error code: %i.", 
+					i + 1, size, sources[i].name, result);
+				kernels[i] = nullptr;
+				continue;
 			}
 			result = clBuildProgram(
 				program, 1, &device, nullptr, nullptr, nullptr);
 			if(result != CL_SUCCESS) {
-				Log::error("an error occured while compiling kernels. "
-					"OpenCL error code: %i.", result);
-				return false;
+				Log::error("compiling kernel (%zi/%zi) \"%s\": fail. "
+					"OpenCL error code: %i.", 
+					i + 1, size, sources[i].name, result);
+				kernels[i] = nullptr;
+				continue;
 			}
 			kernels[i] = clCreateKernel(
 				program, sources[i].name, &result);
 			if(result != CL_SUCCESS) {
-				Log::error("an error occured while compiling kernels. "
-					"OpenCL error code: %i.", result);
-				return false;
+				Log::error("compiling kernel (%zi/%zi) \"%s\": fail. "
+					"OpenCL error code: %i.", 
+					i + 1, size, sources[i].name, result);
+				kernels[i] = nullptr;
+				continue;
 			}
+			Log::success("compiling kernel "
+				"(%zi/%zi) \"%s\": success.", i + 1, size, sources[i].name);
 		}
 		
 		return true;
@@ -203,7 +217,15 @@ namespace Internal {
 	
 	bool Context::runProgram(
 		Program program, size_t range, cl_uint argc, cl_mem *argv) {
+		
+		EPHEDRINE_ASSERT(range > 0, 
+			"Range should be greater than zero.");
 		cl_kernel kernel = kernels[program];
+		if(kernel == nullptr) {
+			Log::error("an error occured while executing program %i. "
+				"Program is unavailable on current device.", program);
+			return false;
+		}
 		cl_int result;
 		for(cl_uint i = 0; i < argc; ++ i) {
 			result = clSetKernelArg(
@@ -226,6 +248,7 @@ namespace Internal {
 	
 	bool Context::readMemory(
 		cl_mem mem, uint8_t *buffer, size_t offset, size_t count) {
+		
 		cl_int result = clEnqueueReadBuffer(
 			queue, mem, CL_TRUE, offset, 
 			count, buffer, 0, nullptr, nullptr);
@@ -239,6 +262,7 @@ namespace Internal {
 	
 	bool Context::writeMemory(
 		cl_mem mem, const uint8_t *buffer, size_t offset, size_t count) {
+		
 		cl_int result = clEnqueueWriteBuffer(
 			queue, mem, CL_TRUE, offset, 
 			count, buffer, 0, nullptr, nullptr);
