@@ -4,6 +4,9 @@ project/msvc14/build/
 project/msvc14/lib/
 project/msvc14/.vs/
 
+# Vim files
+*.swp
+
 # Visual Studio files
 *.db
 *.user
